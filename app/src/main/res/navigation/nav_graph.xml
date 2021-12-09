@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/addLessonFragment"
+        android:name="uz.abduvali.pdponline.fragments.AddLessonFragment"
+        android:label="fragment_add_lesson"
+        tools:layout="@layout/fragment_add_lesson" >
+        <action
+            android:id="@+id/action_addLessonFragment_to_editLessonFragment"
+            app:destination="@id/editLessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addModuleFragment"
+        android:name="uz.abduvali.pdponline.fragments.AddModuleFragment"
+        android:label="fragment_course"
+        tools:layout="@layout/fragment_add_module" >
+        <action
+            android:id="@+id/action_addModuleFragment_to_editModuleFragment"
+            app:destination="@id/editModuleFragment" />
+        <action
+            android:id="@+id/action_addModuleFragment_to_addLessonFragment"
+            app:destination="@id/addLessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editCourseFragment"
+        android:name="uz.abduvali.pdponline.fragments.EditCourseFragment"
+        android:label="fragment_edit_course"
+        tools:layout="@layout/fragment_edit_course" />
+    <fragment
+        android:id="@+id/editLessonFragment"
+        android:name="uz.abduvali.pdponline.fragments.EditLessonFragment"
+        android:label="fragment_edit_lesson"
+        tools:layout="@layout/fragment_edit_lesson" />
+    <fragment
+        android:id="@+id/editModuleFragment"
+        android:name="uz.abduvali.pdponline.fragments.EditModuleFragment"
+        android:label="fragment_edit_modul"
+        tools:layout="@layout/fragment_edit_module" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.abduvali.pdponline.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_modulFragment"
+            app:destination="@id/modulFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addCourseFragment"
+            app:destination="@id/addCourseFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_lessonNumberFragment"
+            app:destination="@id/lessonNumberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonFragment"
+        android:name="uz.abduvali.pdponline.fragments.LessonFragment"
+        android:label="fragment_lesson"
+        tools:layout="@layout/fragment_lesson" />
+    <fragment
+        android:id="@+id/lessonNumberFragment"
+        android:name="uz.abduvali.pdponline.fragments.LessonNumberFragment"
+        android:label="fragment_lesson_number"
+        tools:layout="@layout/fragment_lesson_number" >
+        <action
+            android:id="@+id/action_lessonNumberFragment_to_lessonFragment"
+            app:destination="@id/lessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modulFragment"
+        android:name="uz.abduvali.pdponline.fragments.ModuleFragment"
+        android:label="fragment_modul"
+        tools:layout="@layout/fragment_module" >
+        <action
+            android:id="@+id/action_modulFragment_to_lessonNumberFragment"
+            app:destination="@id/lessonNumberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCourseFragment"
+        android:name="uz.abduvali.pdponline.fragments.AddCourseFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_add_course" >
+        <action
+            android:id="@+id/action_addCourseFragment_to_editCourseFragment"
+            app:destination="@id/editCourseFragment" />
+        <action
+            android:id="@+id/action_addCourseFragment_to_addModuleFragment"
+            app:destination="@id/addModuleFragment" />
+    </fragment>
+</navigation>
